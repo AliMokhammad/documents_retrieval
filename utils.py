@@ -133,7 +133,7 @@ def test_model(data):
     for idx, score in zip(doc_indices, doc_scores):
         index_title = [k for k, v in document_index.items() if v == model.documents[idx]][0]
         title = df.loc[index_title, 'title']
-        details = df.loc[index_title, 'new_preprocessed_text']
+        details = df.loc[index_title, 'details']
         docs.append({"title":title, "score":f"{round(score * 100, 2)}%", "details":details})
 
     res["message"] = "Success"
